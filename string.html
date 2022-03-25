@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos JavaScript</title>
+  </head>
+  <body>
+    <h1>strings</h1>
+    <script>
+      //Cadenas de textos
+      let nombre = "miguel";
+      let apellido = "abache";
+
+      console.log(nombre, apellido);
+
+      //saber el numero de caracteres, propiedades de string
+      console.log(nombre.length);
+      //Metodos
+      console.log(nombre.toLocaleUpperCase()); //Transforma todo a mayuscula
+      console.log(apellido.toLocaleLowerCase()); // Trasnforma todo a minusculas
+      console.log(
+        nombre.includes("miguel"), // Verifica que en la cadena exista esa palabra, devuelve verdadero o falso.
+        nombre.trim(), //Quita los espacio en blanco de una cadena
+        nombre.split(",") // Parte una cadane en un arreglo de caracteres, diviendo cada vez que se tope con el caracter seleccionado.
+      );
+      //Concatenacion
+      let saludo = "Hola mi nombre es " + nombre + " " + apellido;
+      console.log(saludo);
+
+      //Interpolacion de variables
+      //Template String
+      let saludo2 = `Hola mi Saludo2 es ${nombre} ${apellido}`;
+      console.log(saludo2);
+
+      //Nos permite colocar framento de codigos como cadenas
+      let ul = `
+        <ul>
+          <li>lista1</li>
+          <li>lista2</li>
+          <li>lista3</li>
+        </ul>
+      `;
+      console.log(ul);
+    </script>
+  </body>
+</html>

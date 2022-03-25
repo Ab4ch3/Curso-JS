@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funciuones JavaScript</title>
+  </head>
+  <body>
+    <h1>Funciones de JavaScript</h1>
+    <script>
+      /*Las funciones son bloques de codigo autocontenido , 
+      que se define una vez y se puede usar varias veces , puede o no recibir parametros y puede devolver o no valores.
+      */
+
+      //Funcion Declarada
+      function estoEsUnaFuncion() {
+        console.log("uno");
+        console.log("dos");
+        console.log("tres");
+      }
+
+      function devuelveValor() {
+        return 7; //return se usa para cortar procesos
+      }
+      let nombre = "Miguel";
+      let apellido = "Abache";
+
+      function saludar(nombre, apellido) {
+        console.log(`Hola mi nombre es ${nombre} ${apellido}`);
+      }
+      //Invocacion de Funcion
+      estoEsUnaFuncion();
+      devuelveValor();
+      saludar(nombre, apellido);
+    </script>
+  </body>
+</html>

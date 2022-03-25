@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>numberst</title>
+  </head>
+  <body>
+    <h1>numbers</h1>
+    <script>
+      let a = 2;
+      let b = 1;
+      let c = 7.19;
+      let d = "5.16";
+
+      console.log(a, b);
+      console.log(c.toFixed(1)); //Este metodo nos permite decir cuanto decimales mostraremos , redondea
+      console.log(parseInt(c)); //Nos muestra solo la parte entera de un numero, tambien nos sirve para cambiar una cadena con numero a numeros sumables
+      console.log(parseFloat(c)); // nos muestra todo completo , enteros y decimales
+      console.log(typeof c, typeof d); // nos dice de que tipos son los datos que estamos pasando
+
+      console.log(c + parseInt(d)); // Suma los dos valores pero solo la parte, realizando un cambio en el tipo de datos
+      console.log(c + parseFloat(d)); // Suma los dos valores completos hasta sus decimales
+    </script>
+  </body>
+</html>

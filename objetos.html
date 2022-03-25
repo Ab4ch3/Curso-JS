@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objetos</title>
+  </head>
+  <body>
+    <h1>Objeto</h1>
+    <script>
+      let a = new String("hola");
+      //console.log(a);
+
+      /*Es ideal que cuando trabajemos con objeto se deberia declarar como constantes , ya que siempre sera el mismo conts , eso evita que ningun otro objeto remplace el espacio en memoria.
+
+      un objeto es una estructura de llave - valor
+      y puede contener varios tipos de datos incluyendo otro objeto .
+
+      a las varibles dentro de un objeto se le llamaran atributos
+
+      incluso puede tener (metodos o funciones).
+       */
+
+      const b = {};
+      console.log(b);
+
+      const miguel = {
+        // Atributos
+        nombre: "Miguel",
+        apellido: "Abache",
+        edad: 30,
+        pasatiempos: ["correr", "comer", "dormir"],
+        soltero: false,
+        contacto: {
+          email: "miigue@asdasdad.com",
+          twitter: "@asdasdasda",
+          movil: "1548121131",
+        },
+        // Metodos
+        saludar: function () {
+          console.log(`Hola =)`);
+        },
+        decirMiNombre: function () {
+          //cuando se quiere usar algun atributo del objeto se puede usar la palabra "${this}"
+          console.log(
+            `Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} de edad`
+          );
+        },
+      };
+
+      console.log(miguel);
+      console.log(miguel.nombre); //asi podriamos acceder a un dato especifico
+      console.log(miguel.pasatiempos);
+      console.log(miguel.pasatiempos[2]); //seleccion dato del arreglo
+      console.log(miguel.contacto); //seleccionar el objeto
+      console.log(miguel.contacto.movil); // seleccionar dato especifico dentro del objeto
+
+      //ejecutar metodo del objeto
+      miguel.saludar();
+      miguel.decirMiNombre();
+
+      //Tenemos metodos dentro de los objetos que podemos usar , en este caso lista las llaves de los atributos del objeto que le pasemos
+      console.log(Object.keys(miguel));
+      //en este caso lista los valores de los atributos del objeto que le pasemos
+      console.log(Object.values(miguel));
+    </script>
+  </body>
+</html>

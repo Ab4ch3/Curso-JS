@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    <h1>Arrays</h1>
+    <script>
+      //Declarar arreglo
+      let arreglo = [];
+      let b = [1, true, "hola", ["A", "B", "C"]];
+      let colores = ["rojo", "azul", "verde"];
+
+      console.log(arreglo);
+      console.log(b);
+      //para imprimir uno en especial , podemos accede mediante la cordenada que tiene en el array
+      console.log(b[2]);
+      //Lo arrays tienen propiedaddes
+      console.log(b.length);
+      //imprimer datos en concreto de un arreglo dentro de un arreglo
+      //Se accede primero al nivel del padre y luego al hijo
+      console.log(b[3][2]);
+
+      //Metodos
+      //agregar valores a un arreglo a un arreglo y colocarlo al final del arreglo
+      colores.push("negro");
+      //elimina el ultimo valor de un arreglo
+      colores.pop();
+      console.log(colores);
+      //Nos permite ejecutar una funcion por cada elemento que tenga el arreglo
+      //en este caso para armar un lista con los los colores
+      colores.forEach(function (el, index) {
+        console.log(`<li id="${index}">${el}</li>`);
+      });
+    </script>
+  </body>
+</html>
