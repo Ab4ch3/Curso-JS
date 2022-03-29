@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamentos JavaScript</title>
+  </head>
+  <body>
+    <h1>Condicionales</h1>
+    <script>
+      //if & else
+      //Cuando tenemos que elegir entre dos opciones
+      let edad = 17;
+
+      if (edad > 17) {
+        console.log("Eres mayor de edad"); //(si es verdadero, correra este bloque)
+      } else {
+        console.log("Eres mayor de edad"); //(si es falso, correra este bloque)
+      }
+
+      if (edad >= 18) {
+        console.log("Eres mayor de edad");
+      } else {
+        console.log("Eres mayor de edad");
+      }
+
+      //if anidados\
+      // Se usan cuando necesitamos tener 3 opciones para elegi
+      let hora = 10;
+      if (hora >= 0 && hora <= 5) {
+        console.log("Dejame dormir");
+      } else if (hora >= 6 && hora <= 11) {
+        console.log("Buenos dias");
+      } else if (hora >= 12 && hora <= 18) {
+        console.log("Buenas Tardes");
+      } else {
+        console.log("Buenas Noches");
+      }
+
+      //Operador Ternario
+      /* Es una opcion a usar cuando la logica no es tan extensa 
+      consta de (condicion) ? verdero : falso
+      Se pueden agrupar logica en funciones y ejecutarlas segun sea el caso 
+      verdadero o falso
+      */
+      let eresmayor = edad >= 18 ? "Eres mayor de edad" : "Eres menos de edad";
+      console.log(eresmayor);
+
+      //switch -case
+
+      let dia = 6;
+      switch (dia) {
+        case 0:
+          console.log("Es domingo");
+          break; //aca para el bloque de cada case ,(SIEMPRE HAY QUE COLOCARLO)
+        case 1:
+          console.log("Es lunes");
+          break; //aca para el bloque de cada case
+        case 2:
+          console.log("Es Martes");
+          break; //aca para el bloque de cada case
+        case 3:
+          console.log("Es Miercoles");
+          break; //aca para el bloque de cada case
+        default:
+          //Es el valor que tendra si no entra en ninguno de los caso
+          console.log("El dia no existe");
+          break;
+      }
+    </script>
+  </body>
+</html>
