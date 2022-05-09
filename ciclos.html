@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ciclos JavaScript</title>
+  </head>
+  <body>
+    <h1>Ciclos de JavaScript</h1>
+    <script>
+      let contador = 0;
+      // While mientras la condicion se cumpla el va a repetir
+      // El bloque de codigo, es importante contar un aumento o decremento de una variable en cuestion.
+      while (contador < 10) {
+        console.log("While " + contador);
+        contador++; //sumamos al contador para poder salir del ciclo
+      }
+
+      // do-while
+      /*
+        Simpre se ejecuta 1 vez almenos , asi no cumpla la condicion
+        esa es la diferencia entre while y do while
+      */
+      do {
+        console.log("Do While " + contador);
+        contador++; //sumamos al contador para poder salir del ciclo
+      } while (contador < 10);
+
+      // For
+      /*
+        Es una estructura que se divide en 3 partes,que nos permite controlar el flujo de un bloque de repeticion mas facilmente ,
+        consta de 1 varible , la condicion y el decremente o incremento
+
+        Es el comunmente mas usado en javascript
+      */
+      for (let i = 0; i < 10; i++) {
+        console.log("For " + i);
+      }
+
+      //Forma dinamina de recorrer un arreglo
+      let numeros = [10, 20, 30, 40, 50];
+      for (let i = 0; i < numeros.length; i++) {
+        console.log(numeros[i]);
+      }
+
+      //Variantes del for
+      //For in
+      /*Nos permite recorrer o iterar las propiedades de un objeto (se usa para objetos) 
+      cuando se usa for in , la notacion del (.) para ver los valores de las propiedades no se puede usar 
+       */
+      const datos = {
+        nombre: "miguel",
+        apellido: "abache",
+        edad: 30,
+      };
+
+      for (const datospersonales in datos) {
+        console.log(
+          `Key: ${datospersonales}, Value: ${datos[datospersonales]}`
+        ); //Imprime las propiedades del objeto
+      }
+
+      //For of
+      /*
+      El metodo for of nos permite recorrer todos los elementos de cualquier  objeto que sea iterable que exista en javascript
+      */
+
+      for (const elemento of numeros) {
+        console.log(elemento);
+      }
+    </script>
+  </body>
+</html>
