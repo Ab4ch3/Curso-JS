@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manejo de errores JavaScript</title>
+  </head>
+  <body>
+    <h1>Manejo de errores de JavaScript</h1>
+    <script>
+      /*
+      Esta manera para hacer una busqueda de error
+      */
+      try {
+        //en el try se coloca el bloque de codigo a evaluar si hay algun error se va a capturar en el "catch" , apenas el codigo arroje un error la ejecucion se para y da el error al catch
+        console.log("test");
+      } catch (error) {
+        //El catch agarra cualquier error lanzado por el bloque a analizar en el "try"
+        console.log(error); // nos imprime el error que lance
+      } finally {
+        // el bloque finally se ejecutara siempre al final del bloque try-catch
+      }
+
+      // Try catch con error personalizados
+
+      try {
+        let numero = 10;
+        //isNaN no va a decir si es un numero o no, y nos devolvera true o false, y luego colocaremos el error en caso de que sea falso
+        if (isNaN(numero)) {
+          throw new Error("Esto no es un numero"); // Error personalizado
+        }
+        console.log(numero * numero);
+      } catch (error) {
+        console.log(`Se produjo el siguiente error: ${error}`);
+      }
+    </script>
+  </body>
+</html>
