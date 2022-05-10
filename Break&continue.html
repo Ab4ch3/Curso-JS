@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break&continue JavaScript</title>
+  </head>
+  <body>
+    <h1>Break&continue</h1>
+    <script>
+      const NUMEROS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+      //Break y continue solo se pueden usar en estructuras de control
+      for (let index = 0; index < NUMEROS.length; index++) {
+        if (index === 5) {
+          break; //el break corta la continuidad del codigo y lo sca de la estructura de control
+        }
+        console.log(NUMEROS[index]); //aqui estamos recorriendo el arreglo
+      }
+
+      for (let index = 0; index < NUMEROS.length; index++) {
+        if (index === 5) {
+          continue; // omite el codigo de la iteracion cuando cumpla con la condicional que tiene establecida y va continuar
+        }
+        console.log(NUMEROS[index]); //aqui estamos recorriendo el arreglo
+      }
+    </script>
+  </body>
+</html>
