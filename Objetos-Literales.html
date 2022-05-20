@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objetos Literales</title>
+  </head>
+  <body>
+    <h1>Objetos Literales</h1>
+    <script>
+      // Lo objetos literales son una nueva forma de escribir atributos y metodos de un objeto incluso asignarlos.
+      //Manera antigua
+      let nombre = "trueno";
+      let edad = 7;
+
+      const perro = {
+        // propiedades
+        nombre: nombre, //Normalmente le asignamos valores de variables con el mismo nombre que se va a llamar la propiedad
+        edad: edad,
+        // metodos
+        ladrar: function ladrar() {
+          console.log("guaaa, guaaa!!");
+        },
+      };
+
+      console.log(perro);
+      perro.ladrar();
+
+      //Manera simplificada ecmascript
+      //Lo que hace este tipo es agilizar la creacion de los objetos y simplificarlos
+      const dog = {
+        nombre, //si la variable va a tener el mismo nombre que la propiedad javascrip entendera que aca va ese valor en la propiedad
+        edad,
+        raza: "callejero", //Se pueden agregar igual propiedades que no tengamos en variables , como normalmente se hace
+        ladrando() {
+          //Tambien hay una manera nueva de declarar metodos
+          console.log("Guau guau guau !!");
+        },
+      };
+
+      console.log(dog);
+      dog.ladrando();
+    </script>
+  </body>
+</html>
