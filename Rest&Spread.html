@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REST & Operator Spread</title>
+  </head>
+  <body>
+    <h1>REST & Operator Spread</h1>
+    <script>
+      //Parametros REST
+      /* Son una forma de virtualmente ir agregando parametros infinitos
+      a una funcion o una varible , sin saber la cantidad exacto de parametros q recibira y posterormente con esos valor realizar procesos o operaciones
+      */
+      function sumar(a, b, ...c) {
+        //con los (...) estamos diciendo que no sabemos la cantidad de valores que vamos a recibir
+        let resultado = a + b; // aca sumamos los dos valor que ya conocemos
+
+        c.forEach(function (n) {
+          //va a tratar c como un arreglo , y va a recorrer el arreglo sumando los valores a resultado
+          resultado += n; // aca esta sumando a la variable resultado el valor de "n"
+        });
+
+        return resultado;
+      }
+      console.log(sumar(1, 2)); // imprimendo los valores dados por la funcion
+      console.log(sumar(1, 2, 3));
+      console.log(sumar(1, 2, 5)); // va reconociendo nuevos valores en c
+
+      //Operador de propagacion o Spread Operator
+      /* Nos permite cuanto una expresion la tengamos que expandir en situaciones cuando tengamos que guardar multiples argumentos o elementos
+     un ejemplo de uso es cuando tienes un array y necesitas agregar nuevos elementos y no tener q incluirlo dentro del array con push 
+      */
+
+      const arr1 = [1, 2, 3, 4, 5],
+        arr2 = [6, 7, 8, 9, 0];
+
+      console.log(arr1, arr2);
+
+      // en este caso queremos juntar los dos arreglos en 1 solo , y no separados
+      const arr3 = [...arr1, ...arr2]; //El spread operator se colocan (...) antes del arreglo no modifica los arreglos anteriores sino hace una copia y lo agrega al nuevo
+
+      console.log(arr3); // nos imprimira un arreglo con los datos de los dos anteriores
+    </script>
+  </body>
+</html>
