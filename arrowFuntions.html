@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Funtions</title>
+  </head>
+  <body>
+    <h1>Arrow funtions</h1>
+    <script>
+      //funcion expresada  comun
+      const saludar = function () {
+        console.log("Ola");
+      };
+
+      saludar();
+
+      //Arrow funcion
+      /*Consiste en quitar la palabra "funtion" y agregar "=>"
+      cuando el bloque de codigo contiene mas de 1 linea de codigo lo ideal es
+      mantener la estructura de la funcion con las llaves , las arrow funtion tambien pueden tomar el contexto del objeto en lo donde se encuentran "this"
+      hay que tener cuidado con declarar arrow funtion en metodos del objeto
+      */
+      const saludar2 = () => {
+        console.log("HOla2");
+      };
+
+      saludar2();
+      //Cuando la funcion solo tiene una linea de codigo se pueden eliminar las llaves
+      const saludar3 = () => console.log("HOla3");
+
+      saludar3();
+
+      //Arrow funcion con parametros
+      //cuando son multiples parametros se meten dentro de los parentesis. este tipo de funciones ya viene con el return implicito
+      const saludar4 = (nombre) => console.log(`Hola ${nombre}`);
+
+      saludar4("miguel");
+
+      //Cuando hay 1 solo paramentro para recibir podemos pasarlo si necesidad de meterlos en los parentesis
+      const saludar5 = (nombre) => console.log(`Hola ${nombre}`);
+
+      saludar5("miguel");
+
+      //El return ya esta incluido en este caso la suma de a + b
+      const sumar = (a, b) => a + b;
+      console.log(sumar(9, 9));
+    </script>
+  </body>
+</html>
