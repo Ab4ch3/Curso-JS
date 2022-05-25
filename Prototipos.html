@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototipo</title>
+  </head>
+  <body>
+    <h1>Prototipo</h1>
+    <script>
+      //POO -> Programacion orientada a ojetos
+      /*
+          clases -> es un modelo a seguir para basarnos y generar instancias
+          objeto -> es una instancia de una clase
+
+          Estan cuentan con :
+          Atributos  -> son caracteristicas o propiedades del objeto (son variables dentro de un objeto)
+
+          Metodos -> son las acciones que  un objeto puede realizar (son funciones  dentro de un objeto)
+      */
+      // quisieramos crear varios objetos con las mismas caracteristicas lo idea seria generar un protoripo o clase para crearlos en este caso animales
+      //objeto literal
+      const animal = {
+        nombre: "snopy",
+        sonar() {
+          console.log("hago sonido por estoy vivo");
+        },
+      };
+      console.log(animal);
+
+      //Generar un prototipo
+      //funcion constructora , Cuando quereneremos una funcion contructrora lo idea es solo colocar los atributos y asignar los metodos desde afuera al prototipo cuando se repiten muchas veces
+      //V.1
+      function Animal(nombre, genero) {
+        //Atributos
+        this.nombre = nombre;
+        this.genero = genero;
+        //Metodos
+        //Los metodos o funciones dentro de un prototipo no se puede declarar igual que en objetos literales sino de esta manera sino dara error
+        this.sonar2 = function () {
+          console.log("hago sonido por estoy vivo");
+        };
+        this.saludar = function () {
+          console.log(`Hola me llamo ${this.nombre}`);
+        };
+      }
+      //Para generar un nuevo elemento o objeto basado en el prototipo ya creado se unas la palabra "new" y se pasan los parametros necesarios para generar la nueva instancias y asi generar las que queramos
+
+      const lola = new Animal("lolaBunny", "hembra");
+
+      console.log(lola);
+
+      //Funcion conttructora donde asiganmos los metodos al prototipo
+      function Animal2(nombre, genero) {
+        //Atributos
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+      //Metodos
+      //Los metodos agregados al prototipo y asi evistas generar tantos duplicados de los metodos y mejoramos el rendimiento
+      Animal.prototype.sonar2 = function () {
+        console.log("hago sonido por estoy vivo");
+      };
+      Animal.prototype.saludar = function () {
+        console.log(`Hola me llamo ${this.nombre}`);
+      };
+    </script>
+  </body>
+</html>
