@@ -59,12 +59,38 @@
       }
       //Metodos
       //Los metodos agregados al prototipo y asi evistas generar tantos duplicados de los metodos y mejoramos el rendimiento
-      Animal.prototype.sonar2 = function () {
+      Animal2.prototype.sonar2 = function () {
         console.log("hago sonido por estoy vivo");
       };
-      Animal.prototype.saludar = function () {
+      Animal2.prototype.saludar = function () {
         console.log(`Hola me llamo ${this.nombre}`);
       };
+
+      //Herencia Prototipica
+      //Es basar un prototipo heredando caractericas de otro prototipo padre
+
+      function perro(nombre, genero, tamaino) {
+        //Funcion super que manda a llamar la funcion construtora del prototipo padre
+        this.super = Animal2;
+        //Pasamos parametros para la funcion constructora padre
+        this.super(nombre, genero);
+        this.tamaino = tamaino;
+      }
+      //Perro esta herendado de animal2
+      perro.prototype = new Animal2();
+      perro.prototype.constructor = perro;
+
+      //sobreescritura de metodos de prototipos padre en el hijo
+      perro.prototype.sonar2 = function () {
+        console.log("soy un perro guau guau");
+      };
+      //metodos nuevos
+      perro.prototype.ladrar = function () {
+        console.log("guau guau");
+      };
+
+      const snoopy = new perro("Trueno", "masculino", "grande");
+      console.log(snoopy);
     </script>
   </body>
 </html>
