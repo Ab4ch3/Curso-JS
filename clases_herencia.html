@@ -8,6 +8,58 @@
   </head>
   <body>
     <h1>clases y herencia</h1>
-    <script></script>
+    <script>
+      //Crear un clase
+      class Animal {
+        /*El constructor de un clase es un metodo especial que se
+          ejecuta en el momento de instanciar la clase
+        */
+        // Funcion Constructora
+        constructor(nombre, genero) {
+          //Atributos
+          this.nombre = nombre;
+          this.genero = genero;
+        }
+        //Metodos
+        //Los metodos o funciones dentro de un prototipo no se puede declarar igual que en objetos literales sino de esta manera sino dara error
+        sonar() {
+          console.log("hago sonido por estoy vivo");
+        }
+        saludar() {
+          console.log(`Hola me llamo ${this.nombre}`);
+        }
+      }
+
+      //Herencias
+      //Aca estamos declaro una nueva clase herandado atributos y metodo de la clase animal
+      class perro extends Animal {
+        //Funcion Constructora , y usamos el super para usar la del padre
+        constructor(nombre, genero, tamanio) {
+          //el metodo super() manda a llamar el constructor de la clase padre
+          super(nombre, genero);
+          //Este lo usamos asi porq es unica de esta clase
+          this.tamanio = tamanio;
+        }
+        //Metodos
+        sonar() {
+          console.log("hago sonido por estoy vivo");
+        }
+        ladrar() {
+          console.log("guau guau!!");
+        }
+      }
+
+      const mimi = new Animal("mimi", "Hembra");
+
+      const scoby = new perro("scoby", "macho", "Gigante");
+
+      console.log(mimi);
+      mimi.saludar();
+      mimi.sonar();
+
+      console.log(scoby);
+      scoby.ladrar();
+      mimi.sonar();
+    </script>
   </body>
 </html>
