@@ -39,6 +39,7 @@
           super(nombre, genero);
           //Este lo usamos asi porq es unica de esta clase
           this.tamanio = tamanio;
+          this.raza = null;
         }
         //Metodos
         sonar() {
@@ -47,8 +48,27 @@
         ladrar() {
           console.log("guau guau!!");
         }
+        //Declarar metodos estaticos son metodos que se puedes usar sin instanciar la clase
+        static queEres() {
+          console.log("el mejor amigo del homhre");
+        }
+
+        //Los setter y getters son metodos especiales que nos permiten establecer y obtener valores de atributos de nuestra clase
+        //Metodo obtenedor
+        get getraza() {
+          return this.raza;
+        }
+        //Metodo establecedor
+        //El metodo que modificara el valor del atributo
+        set setraza(raza) {
+          this.raza = raza;
+        }
       }
 
+      //Ejecutar metodos estaticos de una lcase
+      perro.queEres();
+
+      //Creando nuevas instancias
       const mimi = new Animal("mimi", "Hembra");
 
       const scoby = new perro("scoby", "macho", "Gigante");
@@ -60,6 +80,13 @@
       console.log(scoby);
       scoby.ladrar();
       mimi.sonar();
+      //Usar metodo obtenedor
+      //El metodo obtenedor se usa como si fuera una propiedad mas del objeto
+      console.log(scoby.getraza);
+      //MEtodo Setter
+      //Se usan como propiedades para definir o setear una propiedad
+      scoby.setraza = "pastor aleman";
+      console.log(scoby.getraza);
     </script>
   </body>
 </html>

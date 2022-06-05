@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objeto Console</title>
+  </head>
+  <body>
+    <h1>Objeto Console</h1>
+    <script>
+      console.log(console); //Imprinir en consola
+
+      console.error("Esto es un error"); //Marcar como si fuera error
+      console.warn("Esto es un aviso"); //Marcar como aviso
+      console.info("esto es informativo"); // Mensaje informativo
+      console.log("Muestra un registro de lo que ha pasado nuestra aplicacion");
+      console.clear();
+      console.dir(document); //Muestra de una manera detalla un elemento en forma de objeto documente , propiedades , metodos
+
+      //Permite crear grupos de salidas de console log
+      console.group("Los curso de youtube");
+      console.log("Curso JS");
+      console.log("Curso HTML");
+      console.groupEnd();
+
+      //Crear tablas atravez de objetos o arreglos con console , ordenados
+      console.table(Object.entries(console).sort());
+
+      //Para saber tiempos de ejecucion de un codigo
+      console.time("cronometrar");
+      const arreglo = Array(100000); //Creara un arreglo de 100000 posiciones
+
+      for (let i = 0; i < arreglo.length; i++) {
+        arreglo[i] = i;
+      }
+      console.timeEnd("cronometrar"); //se coloca el mismo alias que cuando lo inciaste para cerrar el ciclo
+      //console.log(arreglo);
+
+      //Vericar que el codigo funcione correctamente
+      let x = 3,
+        y = 2,
+        pruebaxy = "Se espera que x siempre sea menos a Y";
+
+      console.assert(x < y, { x, y, pruebaxy });
+      //Es este caso se ejecutara por que el la x es mayor q y y se cumple la condicion
+    </script>
+  </body>
+</html>
