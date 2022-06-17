@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objeto Date</title>
+  </head>
+  <body>
+    <h1>Objeto Date</h1>
+    <script>
+      //Obtener la hora y  fecha detallada actual
+      console.log(Date());
+      //Lo ideal es colocarla en una variable
+      let fecha = new Date();
+      console.log(fecha);
+      //Dia del mes
+      console.log(fecha.getDate());
+      //Dias de la semana D-L-M-M-J-V-S -> 0-1-2-3-4-5-6
+      console.log(fecha.getDay());
+      //Mes -> igual con el poosicionamiento anterior
+      console.log(fecha.getMonth());
+      //A#o
+      console.log(fecha.getFullYear());
+      //Hora , Minutos y segundos
+      console.log(fecha.getHours());
+      console.log(fecha.getMinutes());
+      console.log(fecha.getSeconds());
+      console.log(fecha.getMilliseconds());
+
+      //Obtener datos concretos de la fecha
+      console.log(fecha.toDateString());
+      console.log(fecha.toLocaleString());
+      console.log(fecha.toLocaleDateString());
+      console.log(fecha.toLocaleTimeString());
+      console.log(fecha.getTimezoneOffset());
+      console.log(fecha.getUTCDate());
+      console.log(fecha.getUTCHours());
+      console.log(Date.now());
+
+      //Pruebas
+      let mi_cumple = new Date(1992, 5, 7);
+      console.log(mi_cumple);
+    </script>
+  </body>
+</html>
