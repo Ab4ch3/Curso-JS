@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expresiones regulares</title>
+  </head>
+  <body>
+    <h1>Expresiones regulares</h1>
+    <script>
+      /* Es una secuencia de caracteres q genera un patron de busqueda y validadciones de texto dentro de una cadena */
+      let cadena = "Hola lacaba soy un campeon";
+      //Usando el constructor
+      let expReg = new RegExp("campeon", "ig");
+      //Usando otra manera o la manera mas comun
+      let expReg2 = /campeon/gi;
+
+      //Metodos
+      //Para verificar si existe la palabra en la cadena
+      console.log(expReg2.test("campeon"));
+      //Devuelve un arreglo
+      console.log(expReg2.exec("campeon"));
+    </script>
+  </body>
+</html>
