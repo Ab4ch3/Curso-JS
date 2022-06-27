@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+      */
+      //VARIABLES TEST
+      let texto = "miguel";
+      // let texto = 12345512;
+      // let texto = [1, 2, 3];
+      /*  let texto = {
+        name: "miguel",
+        apellido: "abache",
+      }; */
+
+      function verificarTexto(texto) {
+        if (texto.length === 0) {
+          return alert("Coloque un texto valido para contar");
+        } else {
+          let eresCadena =
+            typeof texto === "string"
+              ? true
+              : alert(
+                  `Ingrese un tipo de dato string Valido, tu texto es de tipo ${typeof texto}`
+                );
+          return eresCadena;
+        }
+      }
+      function contarLetras(texto) {
+        if (verificarTexto(texto) === true) {
+          let contador = texto.length;
+          console.log(contador);
+        }
+      }
+
+      contarLetras(texto);
+    </script>
+  </body>
+</html>
