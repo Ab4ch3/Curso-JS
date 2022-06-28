@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal']. */
+
+      let texto =
+        "Lorem Ipsum es simplemente el texto de relleno de las imprentas";
+      let palabras = "Lorem Ipsum es simplement";
+
+      function separarTexto(texto, separador) {
+        console.log(texto.split(separador));
+      }
+      //Arrow funtion
+      const SEPARAR = (palabra, con) => console.log(palabra.split(con));
+
+      //Ejecutar Funciones
+      separarTexto(texto, " ");
+
+      SEPARAR(palabras, " ");
+    </script>
+  </body>
+</html>
