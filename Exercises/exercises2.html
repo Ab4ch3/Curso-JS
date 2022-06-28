@@ -12,11 +12,12 @@
 
       let palabra = "mundillo";
 
-      function recortarPalabras(texto, num) {
+      function recortarPalabras(texto = "", num = undefined) {
         return console.log(texto.slice(0, num));
       }
       //Arrow Funtion
-      const RECORTAR = (texto, num) => console.log(texto.slice(0, num));
+      const RECORTAR = (texto = "", num = undefined) =>
+        console.log(texto.slice(0, num));
 
       recortarPalabras(palabra, 2);
       RECORTAR(palabra, 4);
