@@ -13,14 +13,24 @@
       let palabra = "mundillo";
 
       function recortarPalabras(texto = "", num = undefined) {
-        return console.log(texto.slice(0, num));
+        console.log(texto.slice(0, num));
       }
       //Arrow Funtion
-      const RECORTAR = (texto = "", num = undefined) =>
+      const recortar = (texto = "", num = undefined) =>
         console.log(texto.slice(0, num));
 
       recortarPalabras(palabra, 2);
-      RECORTAR(palabra, 4);
+      recortar(palabra, 4);
+
+      //###############Otra Manera################
+      const recortarTexto = (cadena = "", longitud = undefined) =>
+        !cadena
+          ? console.warn("No ingresaste una cadena de texto")
+          : longitud === undefined
+          ? console.info(cadena.slice(0, longitud))
+          : console.warn("No ingresaste una cadena de texto");
+
+      recortarTexto(palabra, 4);
     </script>
   </body>
 </html>

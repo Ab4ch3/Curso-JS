@@ -12,7 +12,7 @@
       Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
       */
       //VARIABLES TEST
-      let texto = "miguel";
+      let texto = "hola mundo";
       // let texto = 12345512;
       // let texto = [1, 2, 3];
       /*  let texto = {
@@ -39,8 +39,26 @@
           console.log(contador);
         }
       }
-
+      //################OTRA MANERA#########################################
+      function contarCaracteres(cadena = "") {
+        if (!cadena) {
+          console.warn("No ingresaste ninguna cadena");
+        } else {
+          console.info(
+            `La cadena "${cadena}" tiene ${cadena.length} caracteres`
+          );
+        }
+      }
+      //Arrow funtion
+      const contarCaracteres2 = (cadena = "") =>
+        !cadena
+          ? console.warn("No ingresaste ninguna cadena")
+          : console.info(
+              `La cadena "${cadena}" tiene ${cadena.length} caracteres`
+            );
       contarLetras(texto);
+      contarCaracteres(texto);
+      contarCaracteres2(texto);
     </script>
   </body>
 </html>
