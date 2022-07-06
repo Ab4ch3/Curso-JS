@@ -10,7 +10,7 @@
     <script>
       /* 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.*/
 
-      let texto = "hola hola r s mundo";
+      let texto = "hola ramon Mundo Solo mundo hola";
 
       const contarPalabras = (texto = "", palabra = "") => {
         if (!texto) return console.warn("No ingresaste texto");
@@ -19,10 +19,17 @@
         let dividirPalabras = texto.toLocaleLowerCase().split(" ");
         // console.log(dividirPalabras);
 
-        for (let i = 0; i < dividirPalabras.length; i++) {}
+        let repetidos = [];
+        for (let i = 0; i < dividirPalabras.length; i++) {
+          if (dividirPalabras[i] == palabra) {
+            repetidos.push(dividirPalabras[i]);
+          }
+        }
+        console.log(
+          `La palabra ${palabra} se repitio ${repetidos.length} veces`
+        );
       };
-
-      contarPalabras(texto, "hola");
+      contarPalabras(texto, "mundo");
     </script>
   </body>
 </html>
