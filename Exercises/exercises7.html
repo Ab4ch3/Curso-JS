@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true. */
+
+      let frase = "salaS";
+
+      const verificarPalindromo = (frase = "") => {
+        if (!frase) return console.warn("No ingresaste una frase");
+
+        let conversion = frase.split("").reverse().join("").toLocaleLowerCase();
+
+        conversion === frase.toLocaleLowerCase()
+          ? console.info("Es Palindromo")
+          : console.warn("No es palindromo");
+      };
+
+      verificarPalindromo(frase);
+    </script>
+  </body>
+</html>
