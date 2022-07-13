@@ -17,7 +17,6 @@
         if (!palabra) return console.warn("No ingresaste la Palabra a contar");
 
         let dividirPalabras = texto.toLocaleLowerCase().split(" ");
-        // console.log(dividirPalabras);
 
         let repetidos = [];
         for (let i = 0; i < dividirPalabras.length; i++) {
@@ -29,6 +28,9 @@
           `La palabra ${palabra} se repitio ${repetidos.length} veces`
         );
       };
+
+      // Otra manera
+
       contarPalabras(texto, "mundo");
     </script>
   </body>

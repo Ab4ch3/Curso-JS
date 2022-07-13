@@ -17,6 +17,8 @@
         if (!patron) return console.warn("No ingresaste un patron valido");
 
         console.log(texto.replaceAll(patron, ""));
+        // Otra manera de usando expresiones regulares
+        console.log(texto.replace(new RegExp(patron, "ig"), ""));
       };
 
       eliminarCaracteres(texto, "xyz");
