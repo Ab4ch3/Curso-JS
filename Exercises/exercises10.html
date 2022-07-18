@@ -12,12 +12,17 @@
 
       let numero = 2002;
 
-      const eresCapicua = (numero = "") =>
-        !numero
-          ? console.warn("No ingresaste texto")
-          : console.log(numero.split("").reverse().join());
+      const eresCapicua = (numero = "") => {
+        if (!numero) return console.warn("No ingresaste Numero");
 
-      eresCapicua();
+        let nreverse = numero.toString().split("").reverse().join("");
+
+        nreverse = parseInt(nreverse);
+
+        nreverse === numero ? console.log(true) : console.log(false);
+      };
+
+      eresCapicua(numero);
     </script>
   </body>
 </html>
