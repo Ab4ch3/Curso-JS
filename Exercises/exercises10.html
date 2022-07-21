@@ -14,12 +14,17 @@
 
       const eresCapicua = (numero = "") => {
         if (!numero) return console.warn("No ingresaste Numero");
+        if (typeof numero !== "number")
+          //Verifica que el valor pasado sea un numero y no otro tipo de dato
+          return console.error(
+            `El valor de ${numero} ingresado , No es un Numero`
+          );
 
         let nreverse = numero.toString().split("").reverse().join("");
 
         nreverse = parseInt(nreverse);
 
-        nreverse === numero ? console.log(true) : console.log(false);
+        numero === nreverse ? console.log(true) : console.log(false);
       };
 
       eresCapicua(numero);

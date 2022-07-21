@@ -10,11 +10,20 @@
     <script>
       /* Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120. */
 
-      const numeroFactorial = (numero = "") => {
-        if (!numero) return console.warn("No ingresaste Numero");
+      const numeroFactorial = (numero = undefined) => {
+        if (numero === undefined) return console.warn("No ingresaste Numero");
+        if (typeof numero !== "number")
+          return console.error(`El Valor ${numero} , No es un numero`);
+        if (numero === 0)
+          return console.warn("No se puede sacar factorial de 0 ");
+
+        if (Math.sign(numero) === -1)
+          return console.error("El numero no puede ser negativo");
+
         let total = 1;
         for (let i = 1; i <= numero; i++) {
-          total = total * i;
+          // total = total * i;
+          total *= i;
         }
 
         console.log(total);
