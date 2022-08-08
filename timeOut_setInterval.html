@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>timeOut_setInterval</title>
+  </head>
+  <body>
+    <h1>timeOut_setInterval</h1>
+    <script>
+      //Recibe una funcion a ejecutar y un tiempo expresado en ms, y solo se ejecuta 1 sola vez
+      console.log("Inicio");
+      let temporizador = setTimeout(() => {
+        console.log("Ejecutando en setTimeOut");
+      }, 1000);
+
+      clearTimeout(temporizador); //Sirve para cancelar los timeOut y los interval
+      console.log("despues del clearTimeOut");
+
+      //Este se ejecuta indefinidamente cada cierto intervalo de tiempo
+      setInterval(() => {
+        console.log("Ejecutando en setInterval");
+      }, 10000);
+
+      //va ejecutando la funcion cada 1 seg
+      let temp2 = setInterval(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 1000);
+
+      clearInterval(temp2); //Sirve para cancelar los interval
+      console.log("despues del clearInterval");
+    </script>
+  </body>
+</html>
