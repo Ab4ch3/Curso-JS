@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asincronia_eventLoop</title>
+  </head>
+  <body>
+    <h1>Asincronia_eventLoop</h1>
+    <script>
+      // Codigo Sincrono bloqueante
+      //quiere decir que se va a ejecutar proceso a proceso bloquedando el event loops de javascript
+      (() => {
+        console.log("Codigo Sincrono");
+        console.log("Inico");
+
+        function dos() {
+          console.log("Dos");
+        }
+
+        function uno() {
+          console.log("Uno");
+          dos();
+          console.log("Tres");
+        }
+
+        uno();
+        console.log("Fin");
+
+        console.log("#############################################");
+      })();
+      // Codigo Asincrono No bloqueante
+      (() => {
+        console.log("Codigo Asincrono");
+        console.log("Inico");
+
+        function dos() {
+          setTimeout(() => {
+            console.log("Dos");
+          }, 1000);
+        }
+
+        function uno() {
+          setTimeout(() => {
+            console.log("uno");
+          }, 0);
+          dos();
+          console.log("Tres");
+        }
+
+        uno();
+        console.log("fin");
+      })();
+    </script>
+  </body>
+</html>
