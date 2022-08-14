@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callbacks</title>
+  </head>
+  <body>
+    <h1>Callbacks</h1>
+    <script>
+      function modify(array, Callbacks) {
+        //hacemos algo con esta funcion
+        array.push("edu");
+        //despues de hacer la operacion de arriba
+        setTimeout(function () {
+          Callbacks(array);
+        }, 3000);
+      }
+
+      const names = ["miguel", "carolina"];
+
+      modify(names, function (array) {
+        console.log(
+          `se modifico el array y ahora es de ${array.length} elementos`
+        );
+      });
+    </script>
+  </body>
+</html>
