@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promesas</title>
+  </head>
+  <body>
+    <h1>Promesas</h1>
+    <script>
+      /* Las promesas son como un if else, si se cumple devolvera un objeto "result", si no cumple devolvera un objeto "reject"
+       */
+      function cuadradoPromise(value) {
+        //Las promesas devuelven un objeto , resolve o reject
+        //validando y generando el reject
+        if (typeof value !== "number")
+          return Promise.reject("Error el valor ingresado no es un numero");
+        //En caso de que sea del tipo correcto el valor
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve({
+              value, //como la propiedad y el valor tienen el mismo nombre se puede colocar solo el nonmbre
+              result: value * value, //resultado si tiene exito
+            });
+          }, 0 | (Math.random() * 1000));
+        });
+      }
+      /*  cuando se tiene un funcion que devuelve una promesa tienes dos metodos para ir trabajando la asincronia*/
+      cuadradoPromise(0)
+        /* then quires decir que se ejecutara una vez que se cumpla la funcion inicial , osea se resulva se puede tener tanto .then() necesites */
+        .then((obj) => {
+          //then recibe una funcion y dentro un objeto en este caso el result de la promesa
+          //console.log(obj); // imprimimos el resultado de la promesa
+          console.log("Inicio Promises");
+          console.log(`Promises: ${obj.value}, ${obj.result}`);
+          return cuadradoPromise(1); //Volvemos a ejecutar la funcion principal
+        })
+        .then((obj) => {
+          console.log("Segunda Promises");
+          console.log(`Promises: ${obj.value}, ${obj.result}`);
+          return cuadradoPromise("3"); //Error generado
+        })
+        .then((obj) => {
+          console.log("tercera Promises");
+          console.log(`Promises: ${obj.value}, ${obj.result}`);
+        })
+        .then((obj) => {
+          console.log("fin Promises");
+        }) //Puedes seguir anidando .then hasta que lo necesites
+
+        /*  .catch que es el que captura el error */
+        .catch((err) => console.error(err)); //Va a impirmir el error la diferencia con el callback es que aqui solo lo colocamos 1 sola vez y no en todas las ejecuciones
+    </script>
+  </body>
+</html>
