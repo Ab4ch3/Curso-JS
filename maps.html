@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maps</title>
+  </head>
+  <body>
+    <script>
+      //Es una coleccion de datos
+      const mapa = new Map();
+      //Establecer valores
+      mapa.set("nombre", "miguel");
+      mapa.set("apellido", "abache");
+      mapa.set("edad", 30);
+      //otra manerade  a#adir datos
+      const mapa2 = new Map([
+        ["nombre", "sophia"],
+        ["edad", 10],
+      ]);
+
+      console.log(mapa);
+      console.log(mapa.size); //Sabes la cantidad de valores dentro del map
+
+      //Evaluar si se encuentra una llave
+      console.log(mapa.has("correo"));
+      console.log(mapa.has("nombre"));
+
+      //Obtener valores
+      console.log(mapa.get("apellido"));
+
+      //Sobreescribir valor
+      mapa.set("nombre", "Miguel Antonio");
+      console.log(mapa.get("nombre"));
+
+      //eliminar elementos
+      mapa.delete("apellido");
+      console.log(mapa);
+
+      //Iterar mapa
+      for (let [key, value] of mapa) {
+        console.log(`llave:${key}, Valor:${value}`);
+      }
+    </script>
+  </body>
+</html>

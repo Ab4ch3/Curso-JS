@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sets</title>
+  </head>
+  <body>
+    <script>
+      const set = new Set([
+        1,
+        2,
+        3,
+        3,
+        4,
+        5,
+        true,
+        false,
+        false,
+        {},
+        {},
+        "Hola",
+        "HOLA",
+      ]);
+      console.log(set);
+      console.log(set.size);
+
+      console.log("Recorriendo con for of");
+      for (item of set) {
+        console.log(item);
+      }
+      console.log("Recorriendo con foreach");
+      set.forEach((item) => console.log(item));
+
+      //en el sets no se puden ir directamente a los valores , hay q tranformarlos en array para poder acceder a ellos
+
+      let arr = Array.from(set);
+      console.log("convertido en arreglo");
+      console.log(arr);
+      console.log(arr[1]);
+
+      //Tambien nos permite borrar elementos del set
+
+      set.delete("Hola");
+      console.log(set);
+
+      //Para verificar si existen datos
+
+      console.log(set.has("HOLA"));
+      //devolvera true porq existe un registro en el set llamado asi
+
+      //En caso de querer limpiar el set
+      set.clear();
+      console.log(set);
+    </script>
+  </body>
+</html>
